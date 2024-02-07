@@ -53,7 +53,7 @@ class FormCriarConta(FlaskForm):
     def validate_senha(self,senha):
         usuario1 = Usuario()
         nova_senha = bcrypt.generate_password_hash(senha.data,10)
-        usuario = usuario1.query.filter_by(senha=nova_senha).first()
+        usuario = usuario1.query.filter_by(senha=nova_senha)
         print(nova_senha)
 
         if usuario:
