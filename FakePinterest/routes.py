@@ -25,7 +25,7 @@ def criar_conta():
     if formcriarconta.validate_on_submit(): # validate_on_submite serve pra quando clicar no botão
 
         senha = bcrypt.generate_password_hash(
-            formcriarconta.senha.data,10)  # aplica criptografia na senha e assim se o hacker tiver acesso ao banco de dados ele não roubará a senha, mas só a criptografia
+            formcriarconta.senha.data,10).decode("utf-8")  # aplica criptografia na senha e assim se o hacker tiver acesso ao banco de dados ele não roubará a senha, mas só a criptografia
         usuario = Usuario(username=formcriarconta.username.data,senha=senha,email=formcriarconta.email.data)
         database.session.add(usuario)
         database.session.commit()
