@@ -13,7 +13,7 @@ if os.getenv("DEGUB") == 0:
 else:
     link_banco = "sqlite:///comunidade.db"
 
-app.config["SQLALCHEMY_DATABASE_URI"] = link_banco
+app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://fakepostgresql_user:2otVns3ISuz69t9s32AJU1LVIiWyaJrj@dpg-cn1ps70l6cac73ffgtfg-a.oregon-postgres.render.com/fakepostgresql"
 app.config["SECRET_KEY"] = "ca7f77263d0186ce1e8962ab89a5725f"
 app.config["UPLOAD FOLDER"] = "static/fotos_posts"
 

@@ -50,14 +50,9 @@ class FormCriarConta(FlaskForm):
         usuario = usuario1.query.filter_by(username=username.data).first()
         if usuario:
             raise ValidationError("O nome de usuário já existe.")
-    def validate_senha(self,senha):
-        usuario1 = Usuario()
-        nova_senha = bcrypt.generate_password_hash(senha.data,10)
-        usuario = usuario1.query.filter_by(senha=nova_senha)
-        print(nova_senha)
 
-        if usuario:
-            raise ValidationError("Essa senha já está em uso.")
+
+
 
 class FormFoto(FlaskForm):
     foto = FileField("Foto",validators=[DataRequired()])

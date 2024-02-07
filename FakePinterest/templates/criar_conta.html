@@ -48,11 +48,6 @@ FakePinterest - Criar conta
 
           <div class="div-input">
             {{form.senha.label(class="label")}}
-              {% if form.senha.errors %}
-              {% for error in form.senha.errors %}
-              <p style="color: red">{{error}}</p>
-              {% endfor %}
-              {% endif %}
             {{form.senha(class="input")}}
           </div>
 
